@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/itemHome">
+
+    <fragment
+        android:id="@+id/itemHome"
+        android:name="com.example.anmp_projectuts_160419060.view.BookListFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_book_list" >
+        <action
+            android:id="@+id/actionBookDetail"
+            app:destination="@id/bookDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookDetailFragment"
+        android:name="com.example.anmp_projectuts_160419060.view.BookDetailFragment"
+        android:label="Detail Book"
+        tools:layout="@layout/fragment_book_detail" >
+        <action
+            android:id="@+id/actionReviewFragment"
+            app:destination="@id/reviewFragment" />
+        <argument
+            android:name="idbook"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemStudent"
+        android:name="com.example.anmp_projectuts_160419060.view.StudentFragment"
+        android:label="Student"
+        tools:layout="@layout/fragment_student" >
+        <action
+            android:id="@+id/actionBookmarkFragment"
+            app:destination="@id/bookmarkFragment" />
+        <action
+            android:id="@+id/actionUpdateStudent"
+            app:destination="@id/updateStudentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookmarkFragment"
+        android:name="com.example.anmp_projectuts_160419060.view.BookmarkFragment"
+        android:label="Bookmark"
+        tools:layout="@layout/fragment_bookmark">
+        <action
+            android:id="@+id/actionFromBookmarkToBookDetailFragment"
+            app:destination="@id/bookDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/reviewFragment"
+        android:name="com.example.anmp_projectuts_160419060.view.ReviewFragment"
+        android:label="Review"
+        tools:layout="@layout/fragment_review">
+    </fragment>
+    <fragment
+        android:id="@+id/updateStudentFragment"
+        android:name="com.example.anmp_projectuts_160419060.view.UpdateStudentFragment"
+        android:label="Update Student"
+        tools:layout="@layout/fragment_update_student" >
+    </fragment>
+    <fragment
+        android:id="@+id/itemBorrowed"
+        android:name="com.example.anmp_projectuts_160419060.view.BorrowingFragment"
+        android:label="Borrowing"
+        tools:layout="@layout/fragment_borrowing" >
+        <action
+            android:id="@+id/actionBorrowingDetailFragment"
+            app:destination="@id/borrowingDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/borrowingDetailFragment"
+        android:name="com.example.anmp_projectuts_160419060.view.BorrowingDetailFragment"
+        android:label="Borrowing Detail"
+        tools:layout="@layout/fragment_borrowing_detail">
+        <argument
+            android:name="idbook"
+            app:argType="string"
+            app:nullable="true" />
+        <action
+            android:id="@+id/actionFromBorrowingToBookDetail"
+            app:destination="@id/bookDetailFragment" />
+        <action
+            android:id="@+id/actionFeedbackFragment"
+            app:destination="@id/feebackFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/feebackFragment"
+        android:name="com.example.anmp_projectuts_160419060.view.FeedbackFragment"
+        android:label="Feedback"
+        tools:layout="@layout/fragment_feedback" />
+
+</navigation>
